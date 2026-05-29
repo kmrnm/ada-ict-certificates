@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    <%= student.name %> | ADA School ICT Excellence
+  </title>
+
+  <meta property="og:title" content="<%= student.name %> | ADA School ICT Excellence Certificate">
+  <meta property="og:description" content="Awarded for reaching the highest possible score in an ICT assessment.">
+  <meta property="og:image" content="<%= appUrl %>/templates/certificate-empty.png">
+  <meta property="og:url" content="<%= appUrl %>/certificate/<%= student.id %>">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <main class="container wide">
+    <h1>Certificate for <%= student.name %>
+    </h1>
+
+    <div class="certificate-preview">
+      <img src="/templates/certificate-empty.png" alt="Certificate preview">
+      <div class="preview-name">
+        <%= student.name %>
+      </div>
+    </div>
+
+    <a class="button" href="/certificate/<%= student.id %>/download">
+      Download PDF
+    </a>
+
+    <button onclick="window.print()">Print</button>
+
+    <button onclick="shareCertificate('<%= appUrl %>/certificate/<%= student.id %>')">
+      Share Link
+    </button>
+
+    <a class="button"
+      href="https://wa.me/?text=<%= encodeURIComponent('I got my excellence certificate in ICT from Mr. Kamran!: ' + appUrl + '/certificate/' + student.id) %>"
+      target="_blank">
+      Share on WhatsApp
+    </a>
+
+    <div class="instagram-box">
+      <strong>Instagram/Linkedin Story/Post:</strong>
+      <p>
+        Those apps do not allow websites to post directly. Download the PDF, or take a screenshot of the preview above,
+        then upload it to your story/post/message. <br>
+        AND KEEP SHINING! ✨ 
+      </p>
+      <a class="button instagram" href="/certificate/<%= student.id %>/download">
+        Download for Instagram/Linkedin
+      </a>
+    </div>
+
+    <a class="button secondary" href="/">Back</a>
+  </main>
+
+  <script>
+    async function shareCertificate(url) {
+      if (navigator.share) {
+        await navigator.share({
+          title: "ICT Certificate",
+          text: "I got my excellence certificate in ICT from Mr. Kamran!",
+          url
+        });
+      } else {
+        await navigator.clipboard.writeText(url);
+        alert("Certificate link copied!");
+      }
+    }
+  </script>
+</body>
+
+</html>

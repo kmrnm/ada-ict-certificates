@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)),
+    url("/ada-school.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container {
+  max-width: 650px;
+  margin: 50px auto;
+  padding: 30px;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, .6);
+  backdrop-filter: blur(6px);
+}
+
+.wide {
+  max-width: 900px;
+}
+
+h1 {
+  color: #123b63;
+  margin-bottom: 12px;
+}
+
+.lead {
+  font-size: 19px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.kind-note {
+  background: #fff8ea;
+  color: #6d4913;
+  padding: 14px;
+  border-radius: 12px;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+select,
+button,
+.button {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+button,
+.button {
+  background: #123b63;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.secondary {
+  background: #c98624;
+}
+
+.instagram {
+  background: #c13584;
+}
+
+.certificate-preview {
+  position: relative;
+  width: 100%;
+  margin: 24px auto;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+.certificate-preview img {
+  display: block;
+  width: 100%;
+}
+
+.preview-name {
+  position: absolute;
+  left: 0;
+  top: 43%;
+  width: 100%;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: clamp(20px, 6.2vw, 60px);
+  color: #c98624;
+  white-space: nowrap;
+}
+
+.instagram-box {
+  margin-top: 20px;
+  padding: 18px;
+  background: #fff3fa;
+  border-radius: 14px;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.instagram-box p {
+  margin-bottom: 0;
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  h1,
+  .button,
+  button,
+  .instagram-box,
+  .secondary {
+    display: none;
+  }
+
+  .container {
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .certificate-preview {
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
+footer {
+  text-align: center;
+  color: white;
+}
+
+footer span {
+  color: #ff4d6d;
+  display: inline-block;
+  animation: heartBeat 1.6s ease-in-out infinite;
+}
