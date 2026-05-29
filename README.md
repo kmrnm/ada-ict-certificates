@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# ada-ict-certificates
-A simple web app for generating personalized ICT achievement certificates for ADA School students.
-=======
 # Certificate App
 
 ## Run locally
@@ -36,4 +32,3 @@ Optional environment variable after deployment:
 ```txt
 APP_URL=https://your-render-app-name.onrender.com
 ```
->>>>>>> 17253aa (Initial commit)
