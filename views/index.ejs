@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ICT Excellence Certificate</title>
   <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
   <main class="container">
     <h1>Excellence Certificate</h1>
@@ -16,17 +18,73 @@
     </p>
 
     <p class="kind-note">
-      Kind note: to keep it fair and motivating for everyone, please choose your name only if you have at least one excellence badge.
+      Kind note: to keep it fair and motivating for everyone, please choose your name only if you have at least one
+      excellence badge.
       If your name is not in this list yet, your moment is coming too. Keep going.
+    </p>
+
+    <section class="honor-section">
+      <h2>Semester Badge Winners</h2>
+      <p>
+        Huge congratulations to our top badge achievers of the semester, including the final exam results.
+      </p>
+
+      <div class="winner-grid">
+        <div class="winner-card gold">
+          <h3>Adil Orujov</h3>
+          <p>10A1</p>
+        </div>
+
+        <div class="winner-card gold">
+          <h3>Leyla Aliyeva</h3>
+          <p>10A1</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="honor-section">
+      <h2>Final Exam Excellence</h2>
+      <p>
+        Congratulations to the students who achieved the maximum score in the final exam.
+      </p>
+
+      <div class="winner-grid">
+        <div class="winner-card">
+          <h3>Shafiga Abdullayeva</h3>
+          <p>10B2</p>
+        </div>
+
+        <div class="winner-card">
+          <h3>Ayan Mammadova</h3>
+          <p>10A2</p>
+        </div>
+
+        <div class="winner-card">
+          <h3>Aysu Sadayeva</h3>
+          <p>10B1</p>
+        </div>
+
+        <div class="winner-card">
+          <h3>Zahid Gadirov</h3>
+          <p>10B3</p>
+        </div>
+      </div>
+    </section>
+
+    <p class="semester-note">
+      Thank you everyone for your hard work. Keep learning, keep improving, and shine even brighter in the next
+      semester.
     </p>
 
     <form action="/certificate" method="POST">
       <select name="studentId" required>
         <option value="">Choose your name</option>
 
-        <% students.forEach(student => { %>
-          <option value="<%= student.id %>"><%= student.name %></option>
-        <% }) %>
+        <% students.forEach(student=> { %>
+          <option value="<%= student.id %>">
+            <%= student.name %>
+          </option>
+          <% }) %>
       </select>
 
       <button type="submit">View Certificate</button>
@@ -34,4 +92,5 @@
   </main>
   <footer>Made with JS and <span>❤</span> by kamrandroid</footer>
 </body>
+
 </html>
